@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+*{      /*Resetando todos os padrões do navegador*/
+    margin: 0; 
+    padding: 0;
+    border: 0;
+    box-sizing: 0;     
+    font-family:"Poppins", monospace,  sans-serif ;               
+}
+
+body{
+    background-color: #122641;
+    color: #fff;
+    font-weight: 450;
+    display: flex;
+    min-height: 100vh;
+}
+
+main{
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main h1{
+    color: #0476D9;
+    font-size: 3rem; /*Tamanho do h1*/
+    margin-bottom: 3rem;/*Espaçamento*/
+}
+
+main.social-media  {
+    display: flex;
+    align-content: center;
+}
+
+main.social-media a{
+    text-decoration:none; /*link sem decoração*/
+}
+
+main .social-media img {
+    width: 36px;  /* PX: Não muda o tamanho.REM:Muda o tamanho. */
+    margin-left: 3rem; /*O espaçamento de uma logo para a outra */
+}
+
+main .social-media a:first-child img{ 
+    margin: 0; /* Pegando os elementos específicos, para tirar a margin de 3 REM do primeiro filho*/ 
+} 
+
+main .alternative{
+    margin-top: 1rem;
+}
+
+main .alternative span{
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.397);
+    position: relative;
+}
+
+main .alternative span::before, main .alternative span::after{
+    position: absolute;
+    content: ''; /*Quando usamos a before e after, agente precisa astabelecer um content:''; nesse caso ele é vazio.*/
+    height: 2px;
+    width: 100px;
+    bottom: 50%;
+    right: 50px;
+    background: rgb(255, 255, 255, 0.397);
+}
+
+main .alternative span::after{
+    left: 50px;
+}
+
+main form{
+    display:flex;
+    flex-direction: column;
+}
+    /*display:flex; junto com flex-direction: column; => É PQ EU QUERO UM EMBAIXO DO OUTRO*/
+main form label{
+    display: flex;
+    flex-direction: column;
+}
+
+
+main form label span{
+    font-size: 1rem;
+    /*Se o label ou seja o local de colocar o nome, e-mail e senha estiver próximo e vc quer um espaçamento entre eles use:*/
+    margin-top: 2rem;
+}
+
+main form input{
+    background-color:#161923 ;
+    width: 300px;
+    height: 50px;
+    padding: 0 0.5rem;
+    margin-top: 1rem;
+    outline: none; /*outline é a borda do botão quando da zoom*/
+    color: rgb(165, 165, 165);
+    font-size:0.91rem;
+    border-radius: 9px;
+    border: 1px solid #040B18;
+}
+
+main form input[type="submit"] {
+    cursor: pointer; /*Para ficar a mão quando passar o mouse por cima*/
+    width: 50%;
+    margin-top: 4rem;
+    border-radius: 25px /*borda circular*/;
+    background-color: #6C63FF;
+    color: #fff;
+    font-size: 1.1rem;
+    border: none;
+}
+    /*Efeito quando o mouse estiver por cima*/
+
+main form input[type="submit"]:hover{
+    background:#3028be ;
+}
+
+section.images{
+    display: flex;
+    align-items: flex-end;
+     /*Alinhar itens: flex-end(no final do container) e flex-start (no começo). */
+    padding: 4rem;
+}
+
+section.images{
+    width: 100px;
+}
+
+section.images .circle {
+    position: absolute;   /* Pq eu quero ocupar o tamanho inteiro da minha página.*/
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;              
+    clip-path: circle(40% at right 80% /*80% do eixo y*/);
+    /*at: é a position que ele ta, você pode colocar center,left , right e % */
+
+    z-index: -1; /*O z-index: é o eixo z, z-index é a propriedade das camadas, qual camada vai sobrepor outra. E so funciona se tiver uma propriedade position.*/
+
+    background: #C9D6FF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #E2E2E2, #C9D6FF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
